@@ -13,9 +13,11 @@ int main(void)
 	{
 		putchar(l);
 		l++;
+	}
+  while(u<='A') {
     putchar(u);
     u++;
-	}
+  }
 	putchar('\n');
 	return (0);
 }
