@@ -3,7 +3,12 @@
 #include <stdio.h>
 /* more headers goes there */
 
-/* betty style doc for function main goes there */
+/**
+ * main - Determine if the last digit of a random number is
+ * greater than or less than 5, or is zero..
+(*
+ * Return: 0 on success
+ */
 int main(void)
 {
 	int n;
