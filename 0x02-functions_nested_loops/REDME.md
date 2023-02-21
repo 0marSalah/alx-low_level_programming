@@ -18,3 +18,10 @@ You are tasked to come up with solutions for the tasks below yourself to meet wi
 You will not be able to meet the objectives of this or any following project by copying and pasting someone else’s work.
 You are not allowed to publish any content of this project.
 Any form of plagiarism is strictly forbidden and will result in removal from the program.
+
+## 2. 10 x alphabet
+mandatory
+Write a function that prints 10 times the alphabet, in lowercase, followed by a new line.
+
+Prototype: void print_alphabet_x10(void);
+You can only use _putchar twice in your code
