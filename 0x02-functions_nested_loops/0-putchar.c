@@ -12,9 +12,9 @@ int main (void)
   int i = 0;
   while (destination[i] != '\0')
   {
-    putchar(destination[i]);
+    _putchar(destination[i]);
     i++;
   }
-  putchar('\n');
+  _putchar('\n');
   return (0);
 }
