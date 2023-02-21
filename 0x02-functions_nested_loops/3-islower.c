@@ -1,13 +1,9 @@
-#include <stdio.h>
-#include <ctype.h>
 #include "main.h"
 
 void _islower (int c)
 {
-   if (islower(c)) {
-      putchar(1);
-   } else {
-      putchar(0);
-   }
-   return (0);
+  if (c > 96 && c < 123)
+		return (1);
+	else
+		return (0);
 }
