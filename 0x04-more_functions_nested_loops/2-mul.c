@@ -1,9 +1,9 @@
 #include "main.h"
-
 /**
-* _isdigit - Returns 1 if c is a digit
-* @c: takes in a character
-* Return: 0 for uppercase, 1 for lowercase
+* mul - function that multiplies two integers
+* @a: takes in an integer
+* @b: takes in an integer
+* Return: a * b result
 **/
 int mul(int a, int b)
 {
