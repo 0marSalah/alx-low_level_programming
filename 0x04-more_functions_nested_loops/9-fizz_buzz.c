@@ -1,9 +1,9 @@
-#include "main.h"
+#include <stdio.h>
 
 /**
-* print_square - prints a square
-* @size: size of square
-* Return: none
+* main - Fizz Buzz
+*
+* Return: 0
 **/
 
 int main (void)
