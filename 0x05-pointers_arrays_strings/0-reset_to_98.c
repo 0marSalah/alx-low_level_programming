@@ -6,5 +6,5 @@
 **/
 void reset_to_digit(int *n)
 {
-  *n = 98;
+*n = 98;
 }
