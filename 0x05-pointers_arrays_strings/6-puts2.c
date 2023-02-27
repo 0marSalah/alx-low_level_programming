@@ -10,15 +10,9 @@ void rev_string(char *s)
 int i = 0;
 int j;
 
-while (s[i] != '\0')
+while (s[i] != '\0' && i % 2 == 0)
 {
-i++;
-}
-i--;
-for (j = 0; j < i; j++)
-{
-if(i % 2 == 0)
 _putchar(s[i]);
-i--;
+i++;
 }
 }
