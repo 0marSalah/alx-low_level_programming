@@ -1,10 +1,10 @@
 #include "main.h"
 
 /** 
- * _strlen reurn string length
- * @str: string parameter
- * return length of string 
-*/
+* _strlen return string length
+* @str: string parameter
+* return length of string 
+**/
 
 int _strlen(char *s)
 {
