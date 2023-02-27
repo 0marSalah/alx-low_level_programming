@@ -15,7 +15,7 @@ return (len);
 }
 
 /**
- * puts2 - prints every other character of a string, starting with the first
+ * puts_half - unction that prints half of a string, followed by a new line.
  * character, followed by a new line
  * @str: pointer to a string
  * Return: void
