@@ -9,4 +9,5 @@
 void reset_to_digit(int *n)
 {
   *n = 98;
+  return (0);
 }
