@@ -22,9 +22,8 @@ return (len);
 **/
 void puts_half(char *str)
 {
-	// print from half of array
 	int i;
   for (i = 0; str[i] != str[_strlen(str) / 2]; i++)
-    putchar(str[i]);
-  putchar('\n');
+    _putchar(str[i]);
+  _putchar('\n');
 }
