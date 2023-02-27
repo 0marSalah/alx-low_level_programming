@@ -2,7 +2,7 @@
 
 /**
 * _strlen return string length
-* @str: string parameter
+* @s: string parameter
 * return length of string
 **/
 
