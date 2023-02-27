@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * _isdigit - Returns 1 if c is a digit
- * @c: takes in a character
- * Return: 0 for uppercase, 1 for lowercase
- **/
+* reset_to_98 -  takes a pointer to an int
+* @n: take an int
+* Return: int
+**/
 
 void reset_to_digit(int *n)
 {
