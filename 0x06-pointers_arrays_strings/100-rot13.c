@@ -10,7 +10,7 @@ char *rot13(char *s)
 {
 	int i, j;
 	char a[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char b[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+	char rot13[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
@@ -18,7 +18,7 @@ char *rot13(char *s)
 		{
 			if (s[i] == a[j])
 			{
-				s[i] = b[j];
+				s[i] = rot13[j];
 				break;
 			}
 		}
