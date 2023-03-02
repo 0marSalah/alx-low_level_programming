@@ -1,10 +1,8 @@
 #include "main.h"
 
 /**
- * rot13 - encodes a string in rot13
- * @s: string to be encoded
- *
- * Return: nothing
+ * print_number - a function that prints an integer.
+ * @n: number
  */
 void print_number(int n)
 {
