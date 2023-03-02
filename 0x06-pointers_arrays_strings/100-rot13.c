@@ -16,13 +16,20 @@ char *rot13(char *str)
 	i = 0;
 	j = 0;
 
-	while(str[i] != '\0')
+	while (str[i] != '\0')
 	{
-		while (alpha[i] == str[i] || alpha[i] - 32 == str[i])
+		while (j < 26 && alpha[j] != str[i] && alpha[j] - 32 != str[i])
 		{
-			str[i] = rot13[i];
+				j++;
 		}
+		
+		if (j < 26)
+		{
+				str[i] = rot13[j];
+		}
+		
 		i++;
+		j = 0;
 	}
 	return (str);
 }
