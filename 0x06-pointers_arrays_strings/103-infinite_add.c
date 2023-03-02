@@ -11,41 +11,47 @@
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int n1_len, n2_len, max_len, i;
-	char n1_dig, n2_dig, carry, rem, tmp;
+  int carry = 0;
+  int i = strlen(n1) - 1;
+  int j = strlen(n2) - 1;
+  int k = size_r - 1;
+  
+  r[k] = '\0';
 
-	for (n1_len = 0; *(n1 + n1_len) != '\0'; n1_len++)
-		carry = 0;
-	for (n2_len = 0; *(n2 + n2_len) != '\0'; n2_len++)
-		rem = 0;
-	max_len = n1_len > n2_len ? n1_len : n2_len;
-	i = max_len;
-	if (size_r < max_len + 1)
-		return (0);
-	*(r + max_len) = '\0';
-	i--;
-	n1_len--;
-	n2_len--;
-	for (; i >= 0; i--)
-	{
-		n1_dig = n1_len >= 0 ? *(n1 + n1_len) - '0' : 0;
-		n2_dig = n2_len >= 0 ? *(n2 + n2_len) - '0' : 0;
-		rem = (n1_dig + n2_dig + carry) % 10;
-		carry = (n1_dig + n2_dig + carry) / 10;
-		*(r + i) = (rem + '0');
-		n1_len--;
-		n2_len--;
-	}
-	if (carry > 0 && size_r >= max_len + 2)
-	{
-		for (i = max_len + 1; i > 0; i--)
-		{
-			tmp = *(r + i);
-			*(r + i) = *(r + i - 1);
-			*(r + i - 1) = tmp;
-		}
-		*(r + i) = carry + '0';
-		return (r);
-	}
-	return ((carry > 0 && size_r < max_len + 2) ? 0 : r);
+  while (i >= 0 || j >= 0) 
+  {
+  int sum = carry;
+  if (i >= 0)
+    {
+      sum += n1[i] - '0';
+      i--;
+    }
+    if (j >= 0)
+    {
+      sum += n2[j] - '0';
+      j--;
+    }
+    if (k <= 0)
+    {
+      return 0;
+    }
+    carry = sum / 10;
+    r[k - 1] = sum % 10 + '0';
+    k--;
+  }
+
+  if (carry != 0)
+  {
+    if (k <= 0)
+    {
+      return 0;
+    }
+    r[k - 1] = carry + '0';
+  }
+  else if (k == size_r - 1)
+  {
+    return 0;
+  }
+
+  return &r[k];
 }
