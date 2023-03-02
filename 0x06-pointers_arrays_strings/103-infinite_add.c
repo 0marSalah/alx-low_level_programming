@@ -1,6 +1,20 @@
 #include "main.h"
 
 /**
+* _strlen - function that returns the length of a string.
+* @s : s is a character
+* Return: value is i
+**/
+
+int _strlen(char *s)
+{
+int len = 0;
+while (*s++)
+len++;
+return (len);
+}
+
+/**
  * infinite_add - Adds two numbers
  * @n1: The first number
  * @n2: The second number
@@ -12,8 +26,8 @@
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
   int carry = 0;
-  int i = strlen(n1) - 1;
-  int j = strlen(n2) - 1;
+  int i = _strlen(n1) - 1;
+  int j = _strlen(n2) - 1;
   int k = size_r - 1;
   
   r[k] = '\0';
