@@ -1,14 +1,15 @@
 #include "main.h"
 
 /**
-* *_strncpy - a  function that compares two strings.
-* @dest: string
-* @src: string
-* Return: 0
+* _strcmp - a function that copies a string
+* @s1: string
+* @s2: string
+* Return: string
 **/
 
 int _strcmp(char *s1, char *s2)
 {
+
 	for (; *s1 != '\0' && *s2 != '\0'; s1++, s2++)
 	{
 		if (*s1 != *s2)
