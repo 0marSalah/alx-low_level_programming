@@ -8,7 +8,7 @@ char *string_toupper(char *str)
 {
 	int i = 0;
 
-	while ((str[i] != '\n' || str[i] != ',' || str[i] != ';' || str[i] != '.' || str[i] != '!' || str[i] != '?' || str[i] != '"' || str[i] != '(' || str[i] != ')' || str[i] != '{' || str[i] != '}') && str[i] != '\0')
+	while (str[i] != '\n' || str[i] != ',' || str[i] != ';' || str[i] != '.' || str[i] != '!' || str[i] != '?' || str[i] != '"' || str[i] != '(' || str[i] != ')' || str[i] != '{' || str[i] != '}' && str[i] != '\0')
 	{
 		if (str[i] >= 'a' && str[i] <= 'z')
 		{
