@@ -1,27 +1,22 @@
 #include "main.h"
 /**
-* pnumber - help me to find the prime number
-* @x: integer
-* @n: integer
-* Return: 1 if prime or 0 if not
+* wildcmp - returns 1 if the strings can be considered identical or 0
+* @s1: string
+* @s2: string
+* Return: 0
 **/
-int pnumber(int x, int n)
+int wildcmp(char *s1, char *s2)
 {
-	if (n == x)
+	if (*s1 == '\0' && *s2 == '\0')
 		return (1);
-	else if (n % x == 0)
-		return (0);
-	return (pnumber(x + 1, n));
-}
-/**
-* is_prime_number - returns a prime number
-* @n: takes in an integer
-* Return: 1 if n a prime number or 0 if not prime
-**/
-int is_prime_number(int n)
-{
-if (n == 1 || n < 0)
+	if (*s1 == *s2)
+		return (wildcmp(s1 + 1, s2 + 1));
+	if (*s2 == '*')
+	{
+		if (*(s2 + 1) == '*')
+			return (wildcmp(s1, s2 + 1));
+		if (wildcmp(s1 + 1, s2) || wildcmp(s1, s2 + 1))
+			return (1);
+	}
 return (0);
-return (pnumber(2, n));
-
 }
