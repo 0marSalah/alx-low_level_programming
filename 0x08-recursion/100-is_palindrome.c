@@ -40,4 +40,3 @@ int is_palindrome(char *s) {
 	int len = _strlen(s);
 	return is_palindrome_helper(s, 0, len-1);
 }
-
