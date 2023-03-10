@@ -1,12 +1,17 @@
-#include "main.h"
+#include <stdio.h>
 
-int main(int argc, char *argv[]) {
-  char *program_name = argv[0];
-  int i = 0;
-  while (program_name[i] != '\0') {
-    putchar(program_name[i]);
-    i++;
-  }
-  putchar('\n');
-  return 0;
+/**
+* main - entry point
+* @argc: size of argv
+* @argv: array
+* Return: 0
+**/
+
+int main(int argc, char *argv[])
+{
+	int i;
+
+	for (i = 0; i < argc; i++)
+		printf("%s\n", argv[i]);
+	return (0);
 }
