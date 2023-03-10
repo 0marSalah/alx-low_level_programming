@@ -6,7 +6,7 @@ int main(int argc, char *argv[])
   int i = 0;
   while (name[i] != '\0')
   {
-    _putchar(name[i])
+    _putchar(name[i]);
     i++;
   }
   _putchar('\n');
