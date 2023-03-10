@@ -2,7 +2,12 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include <string.h>
-
+/**
+* main - entry point
+* @argc: size of argv
+* @argv: array
+* Return: 0
+**/
 int main(int argc, char *argv[]) {
   int i, j, add = 0;
 
