@@ -1,14 +1,12 @@
 #include "main.h"
 
-int main(int argc, char *argv[])
-{
-  char *name = argv[0];
+int main(int argc, char *argv[]) {
+  char *program_name = argv[0];
   int i = 0;
-  while (name[i] != '\0')
-  {
-    _putchar(name[i]);
+  while (program_name[i] != '\0') {
+    putchar(program_name[i]);
     i++;
   }
-  _putchar('\n');
-  return (0);
+  putchar('\n');
+  return 0;
 }
