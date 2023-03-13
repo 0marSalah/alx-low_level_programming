@@ -1,5 +1,5 @@
 #include "main.h"
-#include <stdio.h>
+#include <stdlib.h>
 
 char *_strdup(char *str)
 {
@@ -9,7 +9,7 @@ char *_strdup(char *str)
   if (str == NULL)
     return (NULL);
 
-  str_p = malloc(strlen(str) * sizeof(char))
+  str_p = malloc(strlen(str) + 1)
 
   if (str_p == NULL)
     return (NULL);
