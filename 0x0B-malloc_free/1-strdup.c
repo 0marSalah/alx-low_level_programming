@@ -1,5 +1,5 @@
-#include <stdio.h>
 #include "main.h"
+#include <stdio.h>
 
 char *_strdup(char *str)
 {
@@ -18,7 +18,6 @@ char *_strdup(char *str)
   {
     str_p[i] = str[i];
   }
-  free(str_p);
 
   return (str_p);
 }
