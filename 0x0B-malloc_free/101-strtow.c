@@ -18,7 +18,7 @@ if (str == NULL || *str == '\0')
 {
 return (NULL);
 }
-if (str[0] == 32)
+if (str == 32)
 {
 return (NULL);
 }
