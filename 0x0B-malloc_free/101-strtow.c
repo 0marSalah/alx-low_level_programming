@@ -1,8 +1,6 @@
 #include "main.h"
-#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <ctype.h>
 
 /**
 * strtow - a function that splits a string into words.
@@ -10,47 +8,93 @@
 * Return: pointer to a array of char
 **/
 
+int count_words(char *str);
+
 char **strtow(char *str)
 {
 char **words;
-int i, j, k, n, len;
-
-if (str == NULL || *str == '\0') {
-return NULL;
+int num_words, i, j, k, len;
+if (str == NULL || *str == '\0')
+{
+return (NULL);
 }
 
-words = (char **)malloc((MAX_WORDS + 1) * sizeof(char *));
-if (words == NULL) {
-return NULL;
+num_words = count_words(str);
+
+words = (char **)malloc((num_words + 1) * sizeof(char *));
+if (words == NULL)
+{
+return (NULL);
+}
+
+for (i = 0; i < num_words; i++)
+{
+words[i] = NULL;
 }
 
 i = 0;
-while (i < MAX_WORDS && *str != '\0') {
-while (isspace(*str)) {
+while (*str != '\0')
+{
+while (*str == ' ')
+{
 str++;
 }
-if (*str == '\0') {
-break;
+
+j = 0;
+while (str[j] != ' ' && str[j] != '\0')
+{
+j++;
 }
-len = 0;
-while (*(str + len) != '\0' && !isspace(*(str + len))) {
-len++;
-}
+
+if (j > 0)
+{
+len = j;
 words[i] = (char *)malloc((len + 1) * sizeof(char));
-if (words[i] == NULL) {
-for (j = 0; j < i; j++) {
-free(words[j]);
+if (words[i] == NULL)
+{
+for (k = 0; k < i; k++)
+{
+free(words[k]);
 }
 free(words);
-return NULL;
+return (NULL);
 }
-for (k = 0; k < len; k++) {
-words[i][k] = *(str++);
-}
-words[i][k] = '\0';
+strncpy(words[i], str, len);
+words[i][len] = '\0';
 i++;
 }
 
-words[i] = NULL;
-return words;
+str += j;
+}
+
+words[num_words] = NULL;
+
+return (words);
+}
+
+/**
+* count_words - a function count words in string.
+* @str: char
+* Return: int
+**/
+int count_words(char *str)
+{
+int count = 0;
+int i = 0;
+while (str[i] != '\0')
+{
+while (str[i] == ' ')
+{
+i++;
+}
+if (str[i] != '\0')
+{
+count++;
+}
+while (str[i] != '\0' && str[i] != ' ')
+{
+i++;
+}
+}
+return (count);
 }
