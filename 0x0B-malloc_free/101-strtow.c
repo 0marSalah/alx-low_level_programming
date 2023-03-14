@@ -18,10 +18,6 @@ if (str == NULL || *str == '\0')
 {
 return (NULL);
 }
-if (str == 32)
-{
-return (NULL);
-}
 
 num_words = count_words(str);
 
