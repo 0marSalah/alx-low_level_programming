@@ -14,10 +14,14 @@ char *argstostr(int ac, char **av)
   if (ac == 0 || av == NULL)
     return (NULL);
 
+  str = malloc(ac * sizeof(char)) 
+  if (str == NULL)
+    return (NULL);
+
   for (i = 0; i < ac; i++)
   {
     str[i] = av[i]
   }
 
-  return (str);
+  return (str);d
 }
