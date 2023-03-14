@@ -22,9 +22,13 @@ return (NULL);
 num_words = count_words(str);
 
 words = (char **)malloc((num_words + 1) * sizeof(char *));
-if (words == NULL)
-{
-return (NULL);
+if (words == NULL) {
+return NULL;
+}
+
+if (num_words == 0) {
+words[0] = NULL;
+return words;
 }
 
 for (i = 0; i < num_words; i++)
