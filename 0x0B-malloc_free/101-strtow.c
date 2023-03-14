@@ -16,7 +16,11 @@ char **words;
 int num_words, i, j, k, len;
 if (str == NULL || *str == '\0')
 {
-return NULL;
+return (NULL);
+}
+if (str == " ")
+{
+return (NULL);
 }
 
 num_words = count_words(str);
@@ -24,7 +28,7 @@ num_words = count_words(str);
 words = (char **)malloc((num_words + 1) * sizeof(char *));
 if (words == NULL)
 {
-return NULL;
+return (NULL);
 }
 
 for (i = 0; i < num_words; i++)
@@ -57,7 +61,7 @@ for (k = 0; k < i; k++)
 free(words[k]);
 }
 free(words);
-return NULL;
+return (NULL);
 }
 strncpy(words[i], str, len);
 words[i][len] = '\0';
@@ -69,7 +73,7 @@ str += j;
 
 words[num_words] = NULL;
 
-return words;
+return (words);
 }
 
 int count_words(char *str)
@@ -91,5 +95,5 @@ while (str[i] != '\0' && str[i] != ' ')
 i++;
 }
 }
-return count;
+return (count);
 }
