@@ -72,6 +72,11 @@ words[num_words] = NULL;
 return (words);
 }
 
+/**
+* count_words - a function count words in string.
+* @str: char
+* Return: int
+**/
 int count_words(char *str)
 {
 int count = 0;
