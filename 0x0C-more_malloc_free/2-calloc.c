@@ -1,17 +1,15 @@
 #include "main.h"
 #include <stdlib.h>
 /**
-* string_nconcat - a function that concatenates two strings
-* @n: unsigned int
-* @s1: char
-* @s2: char
-* Return: Returns a pointer to the allocated memory
+* _calloc - a function that allocates memory for an array, using malloc
+* @nmemb: unsigned int
+* @size: unsigned int
+* Return: pointer to allocated memory of NULL if it fails
 **/
 
 char *_calloc(unsigned int nmemb, unsigned int size)
 {
   void *res;
-  char *p;
   int i;
 
   if (nmemb == 0 || size == 0)
@@ -22,11 +20,8 @@ char *_calloc(unsigned int nmemb, unsigned int size)
   if (!res)
     return (NULL);
 
-  p = res;
-
-  for (i = 0; i < nmemb * size; i++) {
-    p[i] = 0;
-  }
+  for (i = 0; i < nmemb * size; i++)
+    *(res + i) = 0;
 
   return (res);
 }
