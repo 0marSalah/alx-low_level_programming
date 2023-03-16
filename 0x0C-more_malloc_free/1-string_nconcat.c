@@ -11,32 +11,30 @@
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-char *res;
-int i;
+    char *result;
+    int s1_len, s2_len, result_len;
 
-res = malloc(strlen(s1) + strlen(s2) + 1);
-if (!res)
-return (NULL);
+    if (!s1) 
+      s1 = "";
+    if (!s2) 
+      s2 = "";
 
-strcpy(res, s1);
+    s1_len = strlen(s1);
+    s2_len = strlen(s2);
 
-if (!s2)
-{
-res = " ";
+    if (n >= s2_len)
+      n = s2_len;
+
+    result_len = s1_len + n + 1;
+    result = malloc(result_len);
+
+    if (!result) 
+      return NULL;
+
+    strcpy(result, s1);
+    strncat(result, s2, n);
+    result[result_len - 1] = '\0';
+
+    return (result);
 }
-else
-{
-if (strlen(s1) == strlen(s2))
-{
-strcat(res, s2);
-}
-else
-{
-for (i = 0; i <  n; i++)
-{
-res[strlen(s1) + i] = s2[i];
-}
-}
-}
-return (res);
-}
+
