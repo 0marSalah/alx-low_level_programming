@@ -1,126 +1,65 @@
-#include "main.h"
+#include "holberton.h"
 #include <stdlib.h>
 #include <stdio.h>
-#include <ctype.h>
 
 /**
- * _is_zero - determines if any number is zero
- * @argv: argument vector.
- *
- * Return: no return.
- */
-void _is_zero(char *argv[])
+* main - multiplies two positive numbers.
+* @argc: number of arguments
+* @argv: the values in each argc element
+*
+* Description: its like infinite add but with multiplication
+* Return: print the result. return 0 if success
+*/
+
+int main(int argc, char **argv)
 {
-	int i, isn1 = 1, isn2 = 1;
+	int size1 = 0;
+	int size2 = 0;
+	int product_size = 0;
+	int product = 0;
+	int overflow = 0;
+	int index = 0;
+	int tab = 0;
 
-	for (i = 0; argv[1][i]; i++)
-		if (argv[1][i] != '0')
-		{
-			isn1 = 0;
-			break;
-		}
-
-	for (i = 0; argv[2][i]; i++)
-		if (argv[2][i] != '0')
-		{
-			isn2 = 0;
-			break;
-		}
-
-	if (isn1 == 1 || isn2 == 1)
+	while (argv[1][size1])
 	{
-		printf("0\n");
-		exit(0);
+		size1++;
 	}
-}
-
-/**
- * _initialize_array - set memery to zero in a new array
- * @ar: char array.
- * @lar: length of the char array.
- *
- * Return: pointer of a char array.
- */
-char *_initialize_array(char *ar, int lar)
-{
-	int i = 0;
-
-	for (i = 0; i < lar; i++)
-		ar[i] = '0';
-	ar[lar] = '\0';
-	return (ar);
-}
-
-/**
- * _checknum - determines length of the number
- * and checks if number is in base 10.
- * @argv: arguments vector.
- * @n: row of the array.
- *
- * Return: length of the number.
- */
-int _checknum(char *argv[], int n)
-{
-	int ln;
-
-	for (ln = 0; argv[n][ln]; ln++)
-		if (!isdigit(argv[n][ln]))
-		{
-			printf("Error\n");
-			exit(98);
-		}
-
-	return (ln);
-}
-
-/**
- * main - Entry point.
- * program that multiplies two positive numbers.
- * @argc: number of arguments.
- * @argv: arguments vector.
- *
- * Return: 0 - success.
- */
-int main(int argc, char *argv[])
-{
-	int ln1, ln2, lnout, add, addl, i, j, k, ca;
-	char *nout;
-
-	if (argc != 3)
-		printf("Error\n"), exit(98);
-	ln1 = _checknum(argv, 1), ln2 = _checknum(argv, 2);
-	_is_zero(argv), lnout = ln1 + ln2, nout = malloc(lnout + 1);
-	if (nout == NULL)
-		printf("Error\n"), exit(98);
-	nout = _initialize_array(nout, lnout);
-	k = lnout - 1, i = ln1 - 1, j = ln2 - 1, ca = addl = 0;
-	for (; k >= 0; k--, i--)
+	while (argv[2][size2])
 	{
-		if (i < 0)
-		{
-			if (addl > 0)
-			{
-				add = (nout[k] - '0') + addl;
-				if (add > 9)
-					nout[k - 1] = (add / 10) + '0';
-				nout[k] = (add % 10) + '0';
-			}
-			i = ln1 - 1, j--, addl = 0, ca++, k = lnout - (1 + ca);
-		}
-		if (j < 0)
-		{
-			if (nout[0] != '0')
-				break;
-			lnout--;
-			free(nout), nout = malloc(lnout + 1), nout = _initialize_array(nout, lnout);
-			k = lnout - 1, i = ln1 - 1, j = ln2 - 1, ca = addl = 0;
-		}
-		if (j >= 0)
-		{
-			add = ((argv[1][i] - '0') * (argv[2][j] - '0')) + (nout[k] - '0') + addl;
-			addl = add / 10, nout[k] = (add % 10) + '0';
-		}
+		size2++;
 	}
-	printf("%s\n", nout);
+	product_size = size1 + size2 + 1;//calculate the range we need
+	product = malloc(sizeof(char) * product_size);//allocates space
+	if (!product)
+		return (98);
+	while (product_size >= 0)//initialize all to 0
+		product[product_size] = '0';
+	size1--;
+	size2--;
+	while (size2 >= 0)
+	{
+		index = tab;
+		for (j = size1; j >= 0; j--)
+		{
+			product = (argv[1][j]-'0') * (argv[2][size2]-'0');
+			product += product[index] -'0';
+			product += overflow;
+			overflow = product / 10;
+			product[index] = product % 10 + '0';
+			index++;
+		}
+		if (overflow)
+		{
+			product[index] = overflow;
+			index++;
+		}
+		overflow = 0;
+		size2--;
+		tab++;
+	}
+	product[index] ='\0';
+	printf("%s\n", product);
+	free(product);
 	return (0);
 }
