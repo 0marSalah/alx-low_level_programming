@@ -2,12 +2,17 @@
 #include <stdlib.h>
 
 /**
- * free_dog - freees dog.
- * @d: the dog
+ * free_dog - frees dogs.
+ * @d: struct dog.
  *
- * Return: nothing.
+ * Return: no return.
  */
 void free_dog(dog_t *d)
 {
-	free(d);
+	if (d)
+	{
+		free(d->name);
+		free(d->owner);
+		free(d);
+	}
 }
