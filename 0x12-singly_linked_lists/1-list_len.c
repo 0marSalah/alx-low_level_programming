@@ -16,8 +16,8 @@ size = 0;
 
 while (h)
 {
-  h = h->next;
-  size += 1;
+h = h->next;
+size += 1;
 }
 
 return (size);
