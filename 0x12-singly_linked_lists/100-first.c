@@ -2,7 +2,8 @@
 #include "lists.h"
 
 /**
-* myStartupFun - a function that execute before main function
+* myStartupFun - a function that execute before
+main function
 * Return: nothing
 **/
 
