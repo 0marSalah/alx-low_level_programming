@@ -5,20 +5,20 @@
 
 /**
 * *free_listint2 - a function frees listint_t
-* @head: a head oflinked_list
+* @head: a head of linked_list
 * Return: nothing
 **/
 
 void free_listint2(listint_t **head)
 {
-listint_t *current;
+listint_t *tmp;
 if (*head == NULL)
 return;
 while (*head != NULL)
 {
-current = *head;
+tmp = *head;
 *head = (*head)->next;
-free(current);
+free(tmp);
 }
 *head = NULL;
 }
