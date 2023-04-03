@@ -8,18 +8,17 @@
 * Return: a structure to a linked_list
 **/
 
-size_t print_listint(const listint_t *h)
+size_t listint_len(const listint_t *h)
 {
-  size_t size;
+unsigned int size;
 
-  size = 0;
+size = 0;
 
-  while (h)
-  {
-    printf("%i\n", h->n);
-    h = h->next;
-    size += 1;
-  }
+while (h)
+{
+h = h->next;
+size += 1;
+}
 
-  return (size);
+return (size);
 }
