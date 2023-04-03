@@ -3,7 +3,7 @@
 #include "lists.h"
 
 /**
-* print_list - prints all the elements of a linked_list
+* print_listint - prints all the elements of a linked_list
 * @h: a linked_list
 * Return: a structure to a linked_list
 **/
@@ -16,7 +16,7 @@ size = 0;
 
 while (h)
 {
-printf("%lu\n", h->n);
+printf("%i\n", h->n);
 h = h->next;
 size += 1;
 }
