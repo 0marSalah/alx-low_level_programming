@@ -4,8 +4,8 @@
 #include "lists.h"
 
 /**
-* *free_listint - a function frees listint_t
-* @head: a linked_list
+* *free_listint2 - a function frees listint_t
+* @head: a head oflinked_list
 * Return: nothing
 **/
 
