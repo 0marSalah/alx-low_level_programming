@@ -3,7 +3,7 @@
 #include "lists.h"
 
 /**
-* print_listint - prints all the elements of a linked_list
+* listint_len - returns the number of elements in a linked_list
 * @h: a linked_list
 * Return: a structure to a linked_list
 **/
