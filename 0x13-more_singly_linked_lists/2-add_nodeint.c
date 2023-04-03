@@ -22,8 +22,7 @@ ptr  = malloc(sizeof(list_t));
 if (!ptr)
 return (NULL);
 
-ptr->str = strdup(str);
-ptr->len = strlen(str);
+ptr->n = n;
 ptr->next = *head;
 
 *head = ptr;
