@@ -16,6 +16,8 @@ listint_t *tmp;
 
 if (*head == NULL)
 return (0);
+if (*head == NULL)
+return (0);
 
 num = (*head)->n;
 tmp = *head;
