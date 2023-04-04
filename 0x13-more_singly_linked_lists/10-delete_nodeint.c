@@ -17,23 +17,23 @@ listint_t *current, *prev;
 unsigned int i;
 
 if (head == NULL || *head == NULL)
-    return (-1);
+return (-1);
 
 current = *head;
 prev = NULL;
 
 for (i = 0; i < index; i++)
 {
-    if (current == NULL)
-        return (-1);
-    prev = current;
-    current = current->next;
+if (current == NULL)
+return (-1);
+prev = current;
+current = current->next;
 }
 
 if (prev == NULL)
-    *head = current->next;
+*head = current->next;
 else
-    prev->next = current->next;
+prev->next = current->next;
 
 free(current);
 return (1);
