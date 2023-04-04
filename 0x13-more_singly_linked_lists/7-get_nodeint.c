@@ -17,18 +17,15 @@ unsigned int count;
 
 count = 0;
 
-if (head == NULL)
-return (0);
-
 idx = head;
 
-while (head)
+while (count < index)
 {
-if (count == index)
-return (idx);
+if (head == NULL)
+return (NULL);
 
 idx = idx->next;
 count++;
 }
-return (NULL);
+return (idx);
 }
