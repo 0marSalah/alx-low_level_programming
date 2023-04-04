@@ -25,7 +25,7 @@ idx = head;
 while (head)
 {
 if (count == index)
-  return (idx);
+return (idx);
 
 idx = idx->next;
 count++;
