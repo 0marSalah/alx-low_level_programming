@@ -34,7 +34,7 @@ new_node->next = *head;
 return (new_node);
 }
 
-idx--;
+
 while (idx != 1)
 {
 ptr = ptr->next;
