@@ -21,10 +21,10 @@ return (NULL);
 
 while (*head != NULL)
 {
-  tmp2 = (*head)->next;
-  (*head)->next = tmp;
-  tmp = *head;
-  *head = tmp2;
+tmp2 = (*head)->next;
+(*head)->next = tmp;
+tmp = *head;
+*head = tmp2;
 }
 
 *head = tmp;
