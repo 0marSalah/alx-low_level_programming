@@ -5,7 +5,7 @@
 
 /**
 * find_listint_loop - a function that finds the loop in a linked list.
-* @head: holds a pointer to a pointer of a linked list
+* @head: holds a pointer linked list
 * Return: the size of the list
 */
 
