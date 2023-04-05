@@ -13,16 +13,18 @@
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
 unsigned int count;
+listint_t *ptr;
 
 count = 0;
+ptr = head;
 
 while (count < index)
 {
-if (head == NULL)
+if (ptr == NULL)
 return (NULL);
 
-head = head->next;
+ptr = ptr->next;
 count++;
 }
-return (head);
+return (ptr);
 }
