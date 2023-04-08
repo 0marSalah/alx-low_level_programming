@@ -107,3 +107,38 @@ the numerical value produced by the bitwise AND operation to its corresponding
 ASCII character. Since the ASCII value of ‘0’ is 48 and
 the ASCII value of ‘1’ is 49, adding '0' to a value of 0 or 1 produces
 the ASCII value of the corresponding character.
+
+### 2. 10 mandatory
+
+# Write a function that returns the value of a bit at a given index.
+
+    Prototype: int get_bit(unsigned long int n, unsigned int index);
+    where index is the index, starting from 0 of the bit you want to get
+    Returns: the value of the bit at index index or -1 if an error occured
+
+julien@ubuntu:~/0x14. Binary$ cat 2-main.c
+#include <stdio.h>
+#include "main.h"
+
+/**
+ * main - check the code
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+    int n;
+
+    n = get_bit(1024, 10);
+    printf("%d\n", n);
+    n = get_bit(98, 1);
+    printf("%d\n", n);
+    n = get_bit(1024, 0);
+    printf("%d\n", n);
+    return (0);
+}
+julien@ubuntu:~/0x14. Binary$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 2-main.c 2-get_bit.c -o c  
+julien@ubuntu:~/0x14. Binary$ ./c
+1
+1
+0
