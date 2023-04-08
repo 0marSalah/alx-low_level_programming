@@ -219,3 +219,68 @@ julien@ubuntu:~/0x14. Binary$ ./e
 0
 0
 96
+
+### 5. 101 mandatory
+
+# Write a function that returns the number of bits you would need to flip to get from one number to another.
+
+    Prototype: unsigned int flip_bits(unsigned long int n, unsigned long int m);
+    You are not allowed to use the % or / operators
+
+julien@ubuntu:~/0x14. Binary$ cat 5-main.c
+#include <stdio.h>
+#include "main.h"
+
+/**
+ * main - check the code
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+    unsigned int n;
+
+    n = flip_bits(1024, 1);
+    printf("%u\n", n);
+    n = flip_bits(402, 98);
+    printf("%u\n", n);
+    n = flip_bits(1024, 3);
+    printf("%u\n", n);
+    n = flip_bits(1024, 1025);
+    printf("%u\n", n);
+    return (0);
+}
+julien@ubuntu:~/0x14. Binary$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 5-main.c 5-flip_bits.c -o f
+julien@ubuntu:~/0x14. Binary$ ./f
+2
+5
+3
+1
+
+Discuss
+= /*
+n -> 3, m -> 4
+x = 0011 ^ 0100 = 0111 = 7
+count = 0
+while (7 > 0)
+{
+if ((7 & 1) == 1) # 0111 & 0001 = 0001 = 1
+count++; # count = 1
+x = 0111 >> 1 = 0011 = 3
+}
+-------
+while (3 > 0)
+{
+if ((3 & 1) == 1) # 0011 & 0001 = 0001 = 1
+count++; # count = 2
+x = 0011 >> 1 = 0001 = 1
+}
+-------
+while (1 > 0)
+{
+  if ((1 & 1) == 1) # 0001 & 0001 = 0001 = 1
+  count++; # count = 3
+  x = 0001 >> 1 = 0000 = 0
+  }
+  return (3)
+*/
