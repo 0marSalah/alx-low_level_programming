@@ -326,3 +326,10 @@ Core(s) per socket:    1
 Socket(s):             1
 NUMA node(s):          1
 Vendor ID:             GenuineIntel
+
+## discuss
+a function called "get_endianness" that returns the endianness of the system. Endianness refers to the byte order in which data is stored in memory. There are two types of endianness: little-endian and big-endian.
+
+The function works by creating an unsigned integer variable "i" and setting its value to 1. Then, it creates a pointer to a character variable "c" and sets it to the address of "i". By doing this, "c" is pointing to the first byte of "i".
+
+The function then returns the value of the first byte that "c" is pointing to, which can either be 0 or 1, depending on the endianness of the system. If the system is little-endian, the least significant byte is stored at the lowest memory address, so the value of "c" will be 1. If the system is big-endian, the most significant byte is stored at the lowest memory address, so the value of "c" will be 0.
