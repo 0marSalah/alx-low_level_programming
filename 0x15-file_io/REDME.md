@@ -123,3 +123,53 @@ All my life's buried here,
 Heap earth upon it.
 
 (printed chars: 468)
+
+## 1. Under the snow mandatory
+
+# Create a function that creates a file.
+
+    Prototype: int create_file(const char *filename, char *text_content);
+    where filename is the name of the file to create and text_content is a NULL terminated string to write to the file
+    Returns: 1 on success, -1 on failure (file can not be created, file can not be written, write “fails”, etc…)
+    The created file must have those permissions: rw-------. If the file already exists, do not change the permissions.
+    if the file already exists, truncate it
+    if filename is NULL return -1
+    if text_content is NULL create an empty file
+
+julien@ubuntu:~/0x15. File descriptors and permissions$ cat 1-main.c
+#include <stdio.h>
+#include <stdlib.h>
+#include "main.h"
+
+/**
+ * main - check the code
+ *
+ * Return: Always 0.
+ */
+int main(int ac, char **av)
+{
+    int res;
+
+    if (ac != 3)
+    {
+        dprintf(2, "Usage: %s filename text\n", av[0]);
+        exit(1);
+    }
+    res = create_file(av[1], av[2]);
+    printf("-> %i)\n", res);
+    return (0);
+}
+julien@ubuntu:~/0x15. File descriptors and permissions$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 1-main.c 1-create_file.c -o b
+julien@ubuntu:~/0x15. File descriptors and permissions$ ./b hello world
+-> 1)
+julien@ubuntu:~/0x15. File descriptors and permissions$ ls -l hello
+-rw------- 1 julien julien 5 Dec  3 14:28 hello
+julien@ubuntu:~/0x15. File descriptors and permissions$ cat hello 
+worldjulien@ubuntu:~/0x15. File descriptors and permis$ 
+
+Repo:
+
+    GitHub repository: alx-low_level_programming
+
+    Directory: 0x15-file_io
+    File: 1-create_file.c
