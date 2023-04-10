@@ -173,3 +173,47 @@ Repo:
 
     Directory: 0x15-file_io
     File: 1-create_file.c
+
+# 2. Speak gently, she can hear mandatory
+
+Write a function that appends text at the end of a file.
+
+    Prototype: int append_text_to_file(const char *filename, char *text_content);
+    where filename is the name of the file and text_content is the NULL terminated string to add at the end of the file
+    Return: 1 on success and -1 on failure
+    Do not create the file if it does not exist
+    If filename is NULL return -1
+    If text_content is NULL, do not add anything to the file. Return 1 if the file exists and -1 if the file does not exist or if you do not have the required permissions to write the file
+
+julien@ubuntu:~/0x15. File descriptors and permissions$ cat 2-main.c
+#include <stdio.h>
+#include <stdlib.h>
+#include "main.h"
+
+/**
+ * main - check the code
+ *
+ * Return: Always 0.
+ */
+int main(int ac, char **av)
+{
+    int res;
+
+    if (ac != 3)
+    {
+        dprintf(2, "Usage: %s filename text\n", av[0]);
+        exit(1);
+    }
+    res = append_text_to_file(av[1], av[2]);
+    printf("-> %i)\n", res);
+    return (0);
+}
+julien@ubuntu:~/0x15. File descriptors and permissions$ echo -n Hello > hello
+julien@ubuntu:~/0x15. File descriptors and permissions$ ls -l hello
+-rw-rw-r-- 1 julien julien 5 Dec  3 14:48 hello
+julien@ubuntu:~/0x15. File descriptors and permissions$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 2-main.c 2-append_text_to_file.c -o c
+julien@ubuntu:~/0x15. File descriptors and permissions$ ./c hello " World!
+> "
+-> 1)
+julien@ubuntu:~/0x15. File descriptors and permissions$ cat hello 
+Hello World!
