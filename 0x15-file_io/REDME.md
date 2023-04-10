@@ -217,3 +217,36 @@ julien@ubuntu:~/0x15. File descriptors and permissions$ ./c hello " World!
 -> 1)
 julien@ubuntu:~/0x15. File descriptors and permissions$ cat hello 
 Hello World!
+
+
+## 3. cp mandatory
+
+# Write a program that copies the content of a file to another file.
+
+    Usage: cp file_from file_to
+    if the number of argument is not the correct one, exit with code 97 and print Usage: cp file_from file_to, followed by a new line, on the POSIX standard error
+    if file_to already exists, truncate it
+    if file_from does not exist, or if you can not read it, exit with code 98 and print Error: Can't read from file NAME_OF_THE_FILE, followed by a new line, on the POSIX standard error
+        where NAME_OF_THE_FILE is the first argument passed to your program
+    if you can not create or if write to file_to fails, exit with code 99 and print Error: Can't write to NAME_OF_THE_FILE, followed by a new line, on the POSIX standard error
+        where NAME_OF_THE_FILE is the second argument passed to your program
+    if you can not close a file descriptor , exit with code 100 and print Error: Can't close fd FD_VALUE, followed by a new line, on the POSIX standard error
+        where FD_VALUE is the value of the file descriptor
+    Permissions of the created file: rw-rw-r--. If the file already exists, do not change the permissions
+    You must read 1,024 bytes at a time from the file_from to make less system calls. Use a buffer
+    You are allowed to use dprintf
+
+julien@ubuntu:~/0x15. File descriptors and permissions$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 3-cp.c -o cp
+julien@ubuntu:~/0x15. File descriptors and permissions$ cat incitatous 
+Why you should think twice before putting pictures on social media.
+(What you always wanted to know about @Incitatous)
+#PrivacyAware
+http://imgur.com/a/Mq1tc
+julien@ubuntu:~/0x15. File descriptors and permissions$ ./cp incitatous Incitatous
+julien@ubuntu:~/0x15. File descriptors and permissions$ ls -l Incitatous 
+-rw-rw-r-- 1 julien julien 158 Dec  3 15:39 Incitatous
+julien@ubuntu:~/0x15. File descriptors and permissions$ cat Incitatous 
+Why you should think twice before putting pictures on social media.
+(What you always wanted to know about @Incitatous)
+#PrivacyAware
+http://imgur.com/a/Mq1tc
