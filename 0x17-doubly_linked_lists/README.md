@@ -107,5 +107,12 @@ Find the largest palindrome made from the product of two 3-digit numbers.
 
 
 ---------
-#
----------
+# 11. crackme5
+#advanced
+
+Write a keygen for crackme5.
+
+    Usage of the crackme: ./crackme5 username key
+    The crackme will segfault if you do not enter the correct key for the user
+    Usage for your keygen: ./keygen5 username
+    Your keygen should print a valid key for the username
