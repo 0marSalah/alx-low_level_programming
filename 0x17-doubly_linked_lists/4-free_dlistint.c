@@ -1,6 +1,6 @@
 #include "lists.h"
 
-/** 
+/**
  * free_dlistint - free a dlistint_t list
  * @head: pointer to the start of the linked list
 */
