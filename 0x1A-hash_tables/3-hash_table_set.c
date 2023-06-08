@@ -19,7 +19,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (ht == NULL || key == NULL || *key == '\0' || value == NULL)
 		return (0);
 
-	value_copy = strdup(value); /* strdup() returns a pointer to a new string */
+	value_copy = strdup(value);
 	if (value_copy == NULL)
 		return (0);
 
