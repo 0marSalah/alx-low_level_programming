@@ -4,4 +4,6 @@ OBJ = main.o school.o
 NAME = school
 
 all: $(OBJ)
-	$(CC) $(OBJ) -o $(NAME)
+	@echo "Compiling..."
+	@$(CC) $(OBJ) -o $(NAME)
+	@echo "Done."
