@@ -19,13 +19,11 @@ return (-1);
 step = sqrt(size);
 prev = 0;
 
-printf("Value checked array[%lu] = [%d]\n", prev, array[prev]);
 
 while (prev < size && array[prev] < value)
 {
-prev += step;
-if (prev < size)
 printf("Value checked array[%lu] = [%d]\n", prev, array[prev]);
+prev += step;
 }
 
 printf("Value found between indexes [%lu] and [%lu]\n", prev - step, prev);
