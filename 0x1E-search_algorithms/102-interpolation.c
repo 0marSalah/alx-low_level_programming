@@ -15,7 +15,7 @@ size_t lo = 0, hi = size - 1, mid = -1;
 
 while (lo <= hi)
 {
-mid = (int)(lo + (hi - lo) * (value - array[lo]) / (array[hi] - array[lo]));
+mid = lo + (((double)(hi - lo) / (array[hi] - array[lo])) * (value - array[lo]));
 printf("Value checked array[%lu] = [%d]\n", mid, array[mid]);
 
 if (array[mid] == value)
