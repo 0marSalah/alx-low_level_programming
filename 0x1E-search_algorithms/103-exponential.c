@@ -1,7 +1,8 @@
 #include "search_algos.h"
 
 /**
- * binary_search - a function that searches for a value in an array of integers
+ * binarySearch - a function that searches for
+ * a value in an array of integers
  * @array: array of integers
  * @start: int
  * @end: int
@@ -9,10 +10,11 @@
  * Return: int
 */
 
-int binarySearch(int *array, size_t start, size_t end, int key) {
-if(start <= end)
+int binarySearch(int *array, size_t start, size_t end, int key)
 {
-int mid = (start + (end - start) /2);
+if (start <= end)
+{
+int mid = (start + (end - start) / 2);
 size_t i;
 
 printf("Searching in array: ");
@@ -24,11 +26,11 @@ else
 printf("%d, ", array[i]);
 }
 printf("\n");
-if(array[mid] == key)
-return mid;
-if(array[mid] > key)
-return binarySearch(array, start, mid-1, key);
-return binarySearch(array, mid+1, end, key);
+if (array[mid] == key)
+return (mid);
+if (array[mid] > key)
+return (binarySearch(array, start, mid - 1, key));
+return (binarySearch(array, mid + 1, end, key));
 }
 return (-1);
 }
@@ -57,7 +59,8 @@ while (i < size && array[i] <= value)
 printf("Value checked array[%lu] = [%d]\n", i, array[i]);
 i = i * 2;
 }
-printf("Value found between indexes [%lu] and [%lu]\n", i/2, i > size - 1 ? size - 1 : i);
+printf("Value found between indexes [%lu] and [%lu]\n",
+i / 2, i > size - 1 ? size - 1 : i);
 
-return (binarySearch(array, i/2, i > size - 1 ? size - 1 : i, (int)value));
+return (binarySearch(array, i / 2, i > size - 1 ? size - 1 : i, (int)value));
 }
