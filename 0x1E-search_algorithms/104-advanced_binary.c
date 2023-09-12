@@ -1,27 +1,37 @@
 #include "search_algos.h"
 
-/**
- * print_array -a function that prints an array of integers
- * @array: is a pointer to the first element of the array to print
- * @start: is the starting index of the array
- * @end: is the ending index of the array
- * Return: array
- */
+int advanced_binary_recursive(int *array, int value, int lo, int hi)
+{
+int mid, i;
+if (lo > hi)
+return (-1);
 
-int *print_array(int *array, size_t start, size_t end)
+mid = lo + (hi - lo) / 2;
+
+printf("Searching in array: ");
+for (i = lo; i <= hi; i++)
 {
-size_t i;
-for (i = start; i <= end; i++)
-{
-if (i == end)
+if (i == hi)
 printf("%d", array[i]);
 else
 printf("%d, ", array[i]);
 }
 printf("\n");
-return (array);
-}
 
+if (array[mid] == value)
+{
+int left_result = advanced_binary_recursive(array, value, lo, mid - 1);
+return ((left_result != -1) ? left_result : mid);
+}
+else if (array[mid] < value)
+{
+return (advanced_binary_recursive(array, value, mid + 1, hi));
+}
+else
+{
+return (advanced_binary_recursive(array, value, lo, mid - 1));
+}
+}
 /**
  * advanced_binary - a function that searches for a value in an array of
  * integers using the Binary search algorithm
@@ -29,34 +39,12 @@ return (array);
  * @size: is the number of elements in the array
  * @value: is the value to search for
  * Return: index
-*/
+ */
 
 int advanced_binary(int *array, size_t size, int value)
 {
-int lo = 0;
-int hi = size - 1;
-int result = -1;
+if (array == NULL || size == 0)
+return (-1);
 
-while (lo <= hi)
-{
-int mid = lo + (hi - lo) / 2;
-printf("Searching in array: ");
-print_array(array, lo, hi);
-
-if (array[mid] == value)
-{
-result = mid;
-hi = mid - 1;
-}
-else if (array[mid] < value)
-{
-lo = mid + 1;
-}
-else
-{
-hi = mid - 1;
-}
-}
-
-return (result);
+return (advanced_binary_recursive(array, value, 0, size - 1));
 }

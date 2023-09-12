@@ -8,7 +8,7 @@
  * @end: int
  * @key: int
  * Return: int
-*/
+ */
 
 int binarySearch(int *array, size_t start, size_t end, int key)
 {
@@ -42,7 +42,7 @@ return (-1);
  * @size: size of the array
  * @value: value to search in
  * Return: index of the number
-*/
+ */
 
 int exponential_search(int *array, size_t size, int value)
 {
