@@ -24,7 +24,7 @@ left = right;
 right += jump;
 }
 printf("Value found between indexes [%ld] and [%ld]\n", left, right);
-for (i = left; i < size && i <= right; i++)
+for (i = left; i <= size && i <= right; i++)
 {
 printf("Value checked array[%ld] = [%d]\n", i, array[i]);
 if (array[i] == value)
