@@ -1,5 +1,16 @@
 #include "search_algos.h"
 
+
+/**
+ * advanced_binary_recursive - a function that searches for a value in an
+ * array of integers using the Binary search algorithm
+ * @array: is a pointer to the first element of the array to search in
+ * @value: is the value to search for
+ * @lo: is the starting index of the array
+ * @hi: is the ending index of the array
+ * Return: index
+*/
+
 int advanced_binary_recursive(int *array, int value, int lo, int hi)
 {
 int mid, i;
