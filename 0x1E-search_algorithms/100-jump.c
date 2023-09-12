@@ -16,14 +16,13 @@ size_t right = jump;
 size_t i;
 if (array == NULL)
 return (-1);
-printf("Value checked array[%ld] = [%d]\n", left, array[left]);
-while (array[right] < value && right < size)
+while (array[right] <= value && right <= size)
 {
-printf("Value checked array[%ld] = [%d]\n", right, array[right]);
+printf("Value checked array[%lu] = [%d]\n", left, array[left]);
 left = right;
 right += jump;
 }
-printf("Value found between indexes [%ld] and [%ld]\n", left, right);
+printf("Value found between indexes [%lu] and [%lu]\n", left, right);
 for (i = left; i < size && i <= right; i++)
 {
 printf("Value checked array[%lu] = [%d]\n", i, array[i]);
